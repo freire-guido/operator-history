@@ -3,9 +3,10 @@ import pandas as pd
 import argparse
 
 def get_query(query, max_results = None):
+    url = f'http://export.arxiv.org/api/query?search_query={query}'
     if max_results:
-        query += f';max_results={max_results}'
-    res = requests.get(f'http://export.arxiv.org/api/query?search_query={query}')
+        url += f'&max_results={max_results}'
+    res = requests.get(url)
     return res
 
 def main(args):
