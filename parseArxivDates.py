@@ -2,7 +2,7 @@ import argparse
 import re
 
 def main(args):
-    pattern = r'<id>(.*?)</id>'
+    pattern = r'<id>http://arxiv.org/abs/(.*?)</id>'
     with open(args['file']) as file:
         text = file.read()
         ids = re.findall(pattern, text)
