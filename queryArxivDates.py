@@ -15,9 +15,8 @@ def main(args):
     for date in dates:
         submittedDate = f"[{date.strftime('%Y%m%d%H%M')} TO {(date + pd.DateOffset(months=1)).strftime('%Y%m%d%H%M')}]"
         arxivs = get_query(' AND '.join([args['query'], f'submittedDate:{submittedDate}']), args.get('n'))
-        res.append((date, arxivs))
-        print(date)
-        print(arxivs.text)
+        res.append((date, arxivs.text))
+    print(*res, sep = '\n')
     return 0
 
 if __name__ == '__main__':

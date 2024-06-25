@@ -6,7 +6,7 @@ def main(args):
     with open(args['file']) as file:
         text = file.read()
         ids = re.findall(pattern, text)
-        print(ids)
+    print(*ids, sep = '\n')
     return 0
 
 if __name__ == '__main__':
