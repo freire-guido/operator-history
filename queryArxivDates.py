@@ -18,7 +18,7 @@ def main(args):
         res.append((date, arxivs))
         print(date)
         print(arxivs.text)
-    return res
+    return 0
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
